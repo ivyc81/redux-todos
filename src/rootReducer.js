@@ -1,4 +1,4 @@
-import uuid from 'uuid/v4';
+
 
 /**
  * todos: [ { id: '',
@@ -14,8 +14,7 @@ function rootReducer(state = INITIAL_STATE, action) {
   let newTodos;
 
   if (action.type === "ADD_TODO") {
-    let newTodo = { ...action.payload, id: uuid() };
-    newTodos = [...state.todoList, newTodo]
+    newTodos = [...state.todoList, action.payload];
     return { todoList: newTodos };
   }
 
